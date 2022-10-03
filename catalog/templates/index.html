@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Книжный справочник по Rick and Morty</h1>
+
+<p>Приветствуем <em>вас</em>, дорогой читатель <em>Rick and Morty</em>
+    здесь вы найдете много интересного.</p>
+
+
+<h2>Контент</h2>
+
+<p>В нашей библиотеке имеется следующее количество записей:</p>
+<ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+
+
+<p>Вы посетили эту страницу {{ num_visits }} ра{{ num_visits|pluralize }}.</p>
+
+<div>
+    {% load static %}
+    <img src="{% static "images/Rick and Morty.png" %}" alt="Image" width="600px">
+</div>
+
+{% endblock %}
